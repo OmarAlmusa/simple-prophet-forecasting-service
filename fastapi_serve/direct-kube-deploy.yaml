@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fast-api-deployment
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: fast-api
+  
+  template:
+    metadata:
+      labels:
+        app: fast-api
+
+    spec:
+      containers:
+      - name: fast-api
+        image: omar8832/custom-forecast-service:latest
+        env:
+        - name: MLFLOW_ENDPOINT
+          value: "http://host.docker.internal:8080"
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 8000
