@@ -70,7 +70,7 @@ This project was done with the help of the chapter 8 of the book "Python Machine
                 Reads model from MLflow by store ID
             </li>
             <li>
-                Supports prediction via a simple /forecast/store/{id} endpoint
+                Supports prediction via a simple /forecast/ endpoint
             </li>
         </ul>
     </li>
@@ -89,10 +89,10 @@ This project was done with the help of the chapter 8 of the book "Python Machine
         <p>Deployed with Kubernetes:</p>
         <ul>
             <li>
-                Created a Deployment.yaml to run multiple FastAPI replicas
+                Created a direct-kube-deploy.yaml to run multiple FastAPI replicas
             </li>
             <li>
-                Exposed service using a minikube tunnel
+                Exposed service using minikube tunnel
             </li>
             <li>
                 Tuned pod resources to avoid overkill or OOMs
